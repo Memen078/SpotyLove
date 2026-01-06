@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SpotifyLove</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Pantalla inicial (primera ventana) -->
+  <div id="intro" class="overlay">
+    <div class="noteBox">
+      <h3>RECOMENDACIONES:</h3>
+      <ul>
+        <li>🎧 Audífonos puestos</li>
+        <li>🧠 Mente abierta</li>
+        <li>⏳ Tiempo libre y calma</li>
+        <li>🏡 Un espacio tranquilo</li>
+        <li>📱 En móvil, mira en posición horizontal</li>
+        <li>⚠️Alerta de cosas nacas</li>
+      </ul>
+      <br>
+      <em>se inicio el 01/01/2026 pero se ha estado modificando</em>
+    </div>
+    <button id="introBtn">Entendido</button>
+  </div>
+
+  <!-- Pantalla de bienvenida (segunda ventana) -->
+  <div id="welcome" class="overlay hidden">
+    <div class="noteBox">
+      <p>Cada canción que está aquí me hace pensarte y recordar la historia que estamos escribiendo juntos. 
+        A veces las palabras me cuestan y no siempre sé cómo decirlas; por eso, 
+        siempre trataré de expresarte lo que siento por ti a través de una canción.
+        No es necesario escuchar todas las canciones, pero cada una guarda un sentimiento dirigido a ti. 
+        Simplemente dejaré que las letras hablen por mí.
+      <br><br><em>I Love You</em></p>
+    </div>
+    <button id="startBtn">❤</button>
+  </div>
+
+  <!-- Reproductor -->
+  <div id="player" class="hidden">
+    <div class="titleBox">
+      <h1>Notas de Amor</h1>
+      <h5>una playlist que me recuerda a ti y a nuestro amor</h5>
+    </div>
+
+    <div id="mainLayout">
+      <!-- Lista de canciones -->
+      <div id="songList"></div>
+
+      <!-- Canción actual -->
+      <div id="currentSong">
+        <div class="songDisplay">
+          <img id="songImage" src="" alt="">
+          <div class="songBox">
+            <h2 id="songTitle"></h2>
+            <h3 id="songArtist"></h3>
+            <p id="songText"></p>
+
+            <div id="controls">
+              <button id="prevBtn">⏮</button>
+              <button id="playPauseBtn">▶</button>
+              <button id="nextBtn">⏭</button>
+              <button id="shuffleBtn">🔀</button>
+            </div>
+
+            <div id="progressBar">
+              <div id="progressHeart">💖</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cartel de propuesta -->
+  <div id="proposal" class="overlay hidden">
+    <div class="noteBox">
+      <h2>¿Quieres ser mi novia?</h2>
+      <button id="yesBtn">Sí 💖</button>
+    </div>
+  </div>
+
+  <!-- Script SIEMPRE va fuera de los divs -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+/* Fuente y base */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #ffd6e7, #ffe6f0, #ffcce0);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Pantalla de bienvenida */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #ffe6f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* Nota estilo post-it */
+.noteBox {
+  background: repeating-linear-gradient(
+    #fffacd,
+    #fffacd 28px,
+    #ffeb99 28px,
+    #ffeb99 30px
+  );
+  border: 2px solid #fdd835;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 500px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+  transform: rotate(-2deg);
+  animation: fadeIn 1.5s ease;
+}
+
+.noteBox h3 {
+  font-size: 20px;
+  color: #d63384;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.noteBox ul {
+  list-style: none; /* quita viñetas normales */
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.noteBox li {
+  font-size: 16px;
+  color: #4a4a4a;
+  margin: 8px 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Botón corazón */
+#startBtn {
+  background: #ff66b2;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 20px;
+}
+#startBtn:hover {
+  transform: scale(1.2);
+  background: #e63995;
+}
+#introBtn {
+  background: #ff66b2;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 20px;
+}
+#introBtn:hover {
+  transform: scale(1.2);
+  background: #e63995;
+}
+
+/* Ocultar elementos */
+.hidden { display: none; }
+
+/* Cuadro para títulos */
+.titleBox {
+  background: linear-gradient(135deg, #ffcce0, #ffe6f0);
+  border-radius: 30px;
+  padding: 25px 40px;
+  margin: 30px auto;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.5);
+  animation: fadeIn 1.2s ease;
+  transition: transform 0.4s ease;
+}
+.titleBox:hover { transform: scale(1.03); }
+
+/* Título principal con script */
+.titleBox h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: 36px;
+  color: #d63384;
+  text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.3);
+}
+.titleBox h5 {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: #6c757d;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Layout principal */
+#mainLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Playlist */
+#songList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 180px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+#songList::-webkit-scrollbar { width: 8px; }
+#songList::-webkit-scrollbar-track {
+  background: #ffe6f0; border-radius: 10px;
+}
+#songList::-webkit-scrollbar-thumb {
+  background: #ff99cc; border-radius: 10px;
+}
+#songList::-webkit-scrollbar-thumb:hover { background: #ff66b2; }
+
+/* Canción activa */
+.songCard.active {
+  background: #ffe0f0;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+}
+.songDisplay {
+  display: flex;
+  flex-direction: row; /* ← esto es lo que alinea horizontalmente */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+#songImage {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.6);
+}
+
+.songBox {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 25px;
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.6);
+  max-width: 320px;
+  text-align: left;
+  animation: growFade 0.5s ease;
+}
+
+/* Texto dentro del cuadro de canción actual */
+.songBox h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #d63384;   /* rosita para el título */
+  margin-bottom: 5px;
+}
+
+.songBox h3 {
+  font-size: 18px;
+  color: #6c757d;   /* gris elegante para artista */
+  margin-bottom: 10px;
+}
+
+.songBox p {
+  font-size: 16px;
+  color: #4a4a4a;   /* gris oscuro para dedicatoria */
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Tarjeta canción */
+.songCard {
+  background: #ffcce0;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.songCard img {
+  width: 60px; height: 60px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.cardText p {
+  font-size: 16px; font-weight: 700; margin: 0; color: #d63384;
+}
+.cardText small { font-size: 14px; color: #6c757d; }
+.songCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+}
+.songCard:hover::after {
+  content: "💗";
+  position: absolute;
+  right: 10px; top: 10px;
+  font-size: 18px;
+}
+
+/* Reproductor central con efecto vidrio */
+#currentSong {
+  flex: 2;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(255, 182, 193, 0.6);
+}
+#currentSong img {
+  width: 80%; max-width: 300px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 12px 24px rgba(255, 182, 193, 0.3);
+}
+
+/* Controles */
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+#controls button {
+  background: #ff99cc;
+  border: none;
+  width: 45px; height: 45px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+  transition: transform 0.3s, background 0.3s;
+}
+#controls button:hover {
+  transform: scale(1.15);
+  background: #ff66b2;
+}
+/* Play más grande */
+#playPauseBtn {
+  width: 60px; height: 60px;
+  font-size: 24px;
+}
+
+/* Barra de progreso con corazón */
+#progressBar {
+  width: 100%;
+  height: 6px;
+  background: #ffe6f0;
+  border-radius: 3px;
+  position: relative;
+  margin-top: 15px;
+}
+#progressHeart {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  font-size: 16px;
+  transition: left 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #mainLayout { flex-direction: column; align-items: center; gap: 20px; }
+  #songList { max-width: 100%; width: 90%; max-height: none; }
+  #currentSong { width: 90%; margin-top: 20px; }
+  #songImage { width: 180px; max-width: 100%; }
+  .songBox { max-width: 100%; padding: 20px; }
+  #controls button { width: 55px; height: 55px; font-size: 20px; }
+  .titleBox h1 { font-size: 28px; }
+  .titleBox h5 { font-size: 16px; }
+}
+
+/* FUERZA a que el cartel se oculte cuando tenga la clase hidden */
+#proposal.hidden {
+  display: none !important;
+}
+
+#proposal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255, 230, 240, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 1.5s ease;
+}
+
+#proposal .noteBox {
+  transform: scale(1.05);
+  text-align: center;
+}
+
+#proposal h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 36px;
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+#yesBtn {
+  background: #ff66b2;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(255, 105, 180, 0.5);
+  transition: transform 0.3s, background 0.3s;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+  background: #e63995;
+}
+
+
+/* Animaciones */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes growFade {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
