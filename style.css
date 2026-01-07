@@ -387,7 +387,7 @@ body {
 }
 
 .bg2 {
-  background: linear-gradient(270deg, #e0ffe6, #d6f5ff, #f0e6ff);
+  background: linear-gradient(270deg, #1685e0, #4b82e9, #6d82e2);
   background-size: 400% 400%;
   animation: gradientMove 20s ease infinite;
 }
