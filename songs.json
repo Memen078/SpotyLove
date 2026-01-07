@@ -9,7 +9,7 @@
   {
     "title": "Loco (Tu Forma De Ser)",
     "artist": "Los Auténticos Decadantes",
-    "file": "music/loco.mp3",
+    "file": "music/Loco.mp3",
     "image": "imagenes/LocoAlbum.webp",
     "text": "Cada vez que la escucho pienso en ti."
   },
@@ -37,7 +37,7 @@
   {
     "title": "Adore You",
     "artist": "Harry Styles",
-    "file": "music/Adore you.mp3",
+    "file": "music/Adore You.mp3",
     "image": "imagenes/Adore You.png",
     "text": "I Get So Lost Inside Your Eyes, que te digo chula <3"
   },
@@ -142,7 +142,7 @@
    {
     "title": "My Kind of Woman",
     "artist": "Mac DeMarco",
-    "file": "music/My kind of Woman.mp3",
+    "file": "music/My Kind of Woman.mp3",
     "image": "imagenes/my kind of woman.png",
     "text": "You are My kind of woman."
   },
