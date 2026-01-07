@@ -42,6 +42,8 @@ function renderSongList() {
   });
 }
 
+let playCount = 0; // contador de canciones reproducidas
+
 function playSong(index) {
   currentIndex = index;
   const song = songs[index];
@@ -53,16 +55,22 @@ function playSong(index) {
   document.getElementById("songArtist").textContent = song.artist;
   document.getElementById("songText").textContent = song.text;
 
-  // Mostrar cartel solo si es "Mi Mayor Anhelo"
-  if (song.title.toLowerCase().includes("mi mayor anhelo")) {
-    document.getElementById("proposal").classList.remove("hidden");
-  } else {
-    document.getElementById("proposal").classList.add("hidden");
-  }
+  // Mostrar imagen solo si es "Mi Mayor Anhelo"
+if (song.title.toLowerCase().includes("mi mayor anhelo")) {
+  document.getElementById("proposalImage").classList.remove("hidden");
+} else {
+  document.getElementById("proposalImage").classList.add("hidden");
 }
 
+  // 🔄 Cambiar fondo cada 4 canciones reproducidas
+  playCount++;
+  const fondos = ["bg1", "bg2", "bg3", "bg4"];
+  const fondoIndex = Math.floor(playCount / 4) % fondos.length;
 
-
+  const body = document.body;
+  body.classList.remove(...fondos); // limpia clases anteriores
+  body.classList.add(fondos[fondoIndex]);
+}
 
 
 document.getElementById("playPauseBtn").addEventListener("click", () => {
@@ -112,10 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const yesBtn = document.getElementById("yesBtn");
   if (yesBtn) {
     yesBtn.addEventListener("click", () => {
-      document.getElementById("proposal").classList.add("hidden");
+      document.getElementById("proposalImage").classList.add("hidden");
     });
   }
 });
+
 
 
 

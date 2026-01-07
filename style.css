@@ -376,6 +376,35 @@ body {
   background: #e63995;
 }
 
+body { 
+  transition: background 2s ease; /* transición suave de 2 segundos */ 
+}
+
+.bg1 {
+  background: linear-gradient(270deg, #ffd6e7, #ffe6f0, #ffcce0);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+}
+
+.bg2 {
+  background: linear-gradient(270deg, #e0ffe6, #d6f5ff, #f0e6ff);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+}
+
+.bg3 {
+  background: linear-gradient(270deg, #5ce263, #6cd86c, #71c578);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+}
+.bg4 {
+  background: linear-gradient(270deg, #df4d66, #c45567, #b33030);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease infinite;
+}
+
+
+
 
 /* Animaciones */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
