@@ -393,7 +393,7 @@ body {
 }
 
 .bg3 {
-  background: linear-gradient(270deg, #5ce263, #6cd86c, #71c578);
+  background: linear-gradient(270deg, #bd63e7, #a353bb, #b148e2);
   background-size: 400% 400%;
   animation: gradientMove 20s ease infinite;
 }
